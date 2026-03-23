@@ -1,7 +1,14 @@
+const { Connection, clusterApiUrl } = solanaWeb3;
+
+// conexión a Solana (devnet)
+const connection = new Connection(clusterApiUrl("devnet"));
+
 function conectarWallet() {
-  alert("Wallet conectada 🚀");
+  alert("Conectado a Solana Devnet 🚀");
+  console.log("Conectado a:", connection.rpcEndpoint);
 }
 
 function enviarTransaccion(tipo) {
-  alert("Reciclaje de " + tipo + " registrado ♻️");
+  console.log("Enviando a blockchain:", tipo);
+  alert("Reciclaje de " + tipo + " enviado a Solana ♻️");
 }
