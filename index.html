@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reciclaje Web3</title>
+</head>
+<body>
+
+  <h1>Máquina de reciclaje ♻️</h1>
+
+  <button onclick="conectarWallet()">Conectar Wallet</button>
+
+  <br><br>
+
+  <button onclick="enviarTransaccion('plastico')">Plástico</button>
+  <button onclick="enviarTransaccion('metal')">Metal</button>
+  <button onclick="enviarTransaccion('vidrio')">Vidrio</button>
+
+  <!-- Librería de Solana -->
+  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+
+  <!-- Tu archivo JS -->
+  <script src="app.js"></script>
+
+</body>
+</html>
