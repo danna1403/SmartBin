@@ -1,0 +1,51 @@
+#include <Servo.h>
+
+Servo miServo;
+
+void setup() {
+  pinMode(2, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
+  pinMode(7, INPUT_PULLUP);
+
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+
+  miServo.attach(9);
+  miServo.write(90);
+}
+
+void loop() {
+
+  // Material 1
+  if (digitalRead(2) == LOW) {
+    digitalWrite(4, HIGH);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    miServo.write(0);
+  }
+
+  // Material 2
+  else if (digitalRead(3) == LOW) {
+    digitalWrite(5, HIGH);
+    digitalWrite(4, LOW);
+    digitalWrite(6, LOW);
+    miServo.write(90);
+  }
+
+  // Material 3
+  else if (digitalRead(7) == LOW) {
+    digitalWrite(6, HIGH);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    miServo.write(180);
+  }
+
+  // Nada presionado
+  else {
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    miServo.write(90);
+  }
+}
